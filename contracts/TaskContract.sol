@@ -1,8 +1,12 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.6;
 
 contract TaskContract {
-    uint256 taskCounter = 0;
+    uint public taskCounter = 0;
+
+    constructor () {
+        createTask("Mi primer tarea de ejemplo", "Mi primera descripcion");
+    }
 
     struct Task {
         uint256 id;
@@ -21,5 +25,9 @@ contract TaskContract {
         taskCounter++;
     }
 
-    // function toggleDone() {}
+    function toggleDone(uint _id) public {
+        Task memory _task = task[_id];
+        _task.done = !_task.done;
+        task[_id] = _task;
+    }
 }
