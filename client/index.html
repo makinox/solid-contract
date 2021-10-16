@@ -15,12 +15,20 @@
         <h5>Wallet</h5>
         <span>12345666</span>
       </div>
-      <div class="card">
+      <form class="card" id="taskForm">
         <h5>Save a task</h5>
-        <input type="text" id="save" placeholder="Save a task" />
+        <input type="text" name="taskForm-title" placeholder="title" />
+        <input
+          type="text"
+          name="taskForm-description"
+          placeholder="description"
+        />
         <button>Save</button>
-      </div>
+      </form>
     </section>
   </body>
+  <!-- <script src="/libs/web3/dist/web3.min.js"></script> -->
+  <script src="/libs/@truffle/contract/dist/truffle-contract.min.js"></script>
   <script src="./app.js"></script>
+  <script src="./ui.js"></script>
 </html>

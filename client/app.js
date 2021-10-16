@@ -1,10 +1,12 @@
 App = {
   web3Provider: undefined,
+  contracts: {},
   web3: undefined,
 
   init: () => {
     console.log("init");
     App.loadEthereum();
+    App.loadContracts();
   },
 
   loadEthereum: async () => {
@@ -17,6 +19,14 @@ App = {
     } else {
       console.log("Please install a ethereum wallet in your browser");
     }
+  },
+
+  loadContracts: async () => {
+    const response = await fetch("TaskContract.json");
+    const data = await response.json();
+    App.contracts.taskContract = TruffleContract(data);
+    App.contracts.taskContract.setProvider(App.web3Provider);
+    App.taskc = App.contracts.taskContract.deployed();
   },
 };
 

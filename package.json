@@ -6,11 +6,14 @@
   "author": "Jesus Bossa <x@jesusbossa.dev>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel client/index.html",
+    "start": "lite-server",
     "test": "truffle test",
     "build:blockchain": "truffle deploy"
   },
   "devDependencies": {
-    "parcel": "^2.0.0"
+    "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "@truffle/contract": "^4.3.38"
   }
 }
