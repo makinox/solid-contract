@@ -1,1 +1,0 @@
-{"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","sources":["client/index.css"],"sourcesContent":["body >  section {\n  display: flex;\n}\n\n.card {\n  border: 1px solid #000;\n  display: inline-block;\n}"],"names":[],"version":3,"file":"index.71a96026.css.map","sourceRoot":"/__parcel_source_root/"}
