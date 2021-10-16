@@ -8,6 +8,7 @@ App = {
     console.log("init");
     App.loadEthereum();
     App.loadContracts();
+    App.renderTask();
   },
 
   loadEthereum: async () => {
@@ -19,6 +20,7 @@ App = {
       });
       App.activeAccount = account[0];
       App.render();
+      App.renderTask();
     } else if (window.web3) {
       web3 = new Web3(window.web3.currentProvider);
     } else {
@@ -28,6 +30,35 @@ App = {
 
   render: async () => {
     document.getElementById("address").innerHTML = App.activeAccount;
+  },
+
+  renderTask: async () => {
+    const taskRef = await App.taskc;
+    if (taskRef) {
+      const counter = await taskRef.taskCounter();
+      let finalHtml = "";
+
+      [...Array(counter.toNumber()).keys()].map(async (elem) => {
+        const taskResponse = await taskRef.task(elem);
+        const taskObject = {
+          id: taskResponse[0],
+          title: taskResponse[1],
+          description: taskResponse[2],
+          done: taskResponse[3],
+          createdAt: taskResponse[4],
+        };
+        let taskElement = `
+          <article>
+            <span>${taskObject.id}</span>
+            <span>${taskObject.title}</span>
+            <span>${taskObject.description}</span>
+            <span>${taskObject.done}</span>
+          </article>
+        `;
+        finalHtml += taskElement;
+        document.querySelector("#list").appendChild(taskElement);
+      });
+    }
   },
 
   loadContracts: async () => {

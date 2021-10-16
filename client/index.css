@@ -1,8 +1,13 @@
-body >  section {
+body >  .info {
   display: flex;
 }
 
 .card {
   border: 1px solid #000;
   display: inline-block;
+}
+
+.list {
+  margin-top: 10px;
+  display: flex;
 }
