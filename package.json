@@ -1,0 +1,16 @@
+{
+  "name": "solid-contract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/makinox/solid-contract.git",
+  "author": "Jesus Bossa <x@jesusbossa.dev>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel client/index.html",
+    "test": "truffle test",
+    "build:blockchain": "truffle deploy"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
