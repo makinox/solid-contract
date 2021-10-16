@@ -18,11 +18,16 @@ App = {
         method: "eth_requestAccounts",
       });
       App.activeAccount = account[0];
+      App.render();
     } else if (window.web3) {
       web3 = new Web3(window.web3.currentProvider);
     } else {
       console.log("Please install a ethereum wallet in your browser");
     }
+  },
+
+  render: async () => {
+    document.getElementById("address").innerHTML = App.activeAccount;
   },
 
   loadContracts: async () => {
