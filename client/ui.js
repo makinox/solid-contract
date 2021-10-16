@@ -3,8 +3,8 @@ const taskForm = document.querySelector("#taskForm");
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  console.log({
-    title: taskForm["taskForm-title"].value,
-    description: taskForm["taskForm-description"].value,
-  });
+  const title = taskForm["taskForm-title"].value;
+  const description = taskForm["taskForm-description"].value;
+
+  App.createTask(title, description);
 });
