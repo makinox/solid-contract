@@ -38,8 +38,8 @@ App = {
       const counter = await taskRef.taskCounter();
       let finalHtml = "";
 
-      [...Array(counter.toNumber()).keys()].map(async (elem) => {
-        const taskResponse = await taskRef.task(elem);
+      for (let i = 0; i <= counter.toNumber(); i++) {
+        const taskResponse = await taskRef.task(i);
         const taskObject = {
           id: taskResponse[0],
           title: taskResponse[1],
@@ -52,13 +52,31 @@ App = {
             <span>${taskObject.id}</span>
             <span>${taskObject.title}</span>
             <span>${taskObject.description}</span>
+            <span>created at:  ${new Date(
+              taskObject.createdAt * 1000
+            ).toLocaleString()}</span>
             <span>${taskObject.done}</span>
+            <button onclick="App.toogleDone(${
+              taskObject.id
+            })">toggleDone</button>
           </article>
         `;
         finalHtml += taskElement;
-        document.querySelector("#list").appendChild(taskElement);
+      }
+
+      document.querySelector("#list").innerHTML = finalHtml;
+    }
+  },
+
+  toogleDone: async (id) => {
+    console.log({ id });
+    const taskRef = await App.taskc;
+    if (taskRef) {
+      await taskRef.toggleDone(parseInt(id, 10), {
+        from: App.activeAccount,
       });
     }
+    App.renderTask();
   },
 
   loadContracts: async () => {
@@ -74,7 +92,7 @@ App = {
     const result = await taskRef.createTask(title, description, {
       from: App.activeAccount,
     });
-    console.log({ result: result.logs[0].args });
+    App.renderTask();
   },
 };
 

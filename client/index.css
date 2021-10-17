@@ -10,4 +10,14 @@ body >  .info {
 .list {
   margin-top: 10px;
   display: flex;
+  flex-wrap: wrap;
+}
+
+.list > article {
+  
+  margin: 10px 0;
+  border: 1px solid green;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: start;
 }
