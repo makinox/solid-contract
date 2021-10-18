@@ -89,7 +89,7 @@ App = {
 
   createTask: async (title, description) => {
     const taskRef = await App.taskc;
-    const result = await taskRef.createTask(title, description, {
+    await taskRef.createTask(title, description, {
       from: App.activeAccount,
     });
     App.renderTask();

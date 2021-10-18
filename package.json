@@ -7,13 +7,21 @@
   "license": "MIT",
   "scripts": {
     "start": "lite-server",
+    "dev": "parcel src/index.html",
+    "build": "parcel build",
     "test": "truffle test",
     "build:blockchain": "truffle deploy"
   },
   "devDependencies": {
-    "lite-server": "^2.6.1"
+    "@types/react": "^17.0.30",
+    "@types/react-dom": "^17.0.9",
+    "lite-server": "^2.6.1",
+    "parcel": "^2.0.0"
   },
   "dependencies": {
-    "@truffle/contract": "^4.3.38"
+    "@makinox/makinox-ui": "^1.5.2",
+    "@truffle/contract": "^4.3.38",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

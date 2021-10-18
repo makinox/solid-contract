@@ -1,0 +1,24 @@
+:root {
+  --light-primary: 22, 10, 255;
+  --light-primary-variant: 117, 70, 255;
+  --light-secondary: 243, 255, 10;
+  --light-secondary-variant: 255, 255, 91;
+  --light-background: 255, 255, 255;
+  --light-surface: 245, 245, 246;
+  --light-error: 255, 22, 23;
+  --light-onPrimary: 255, 255, 255;
+  --light-onSecondary: 0, 0, 0;
+  --light-onBackground: 0, 0, 0;
+  --light-onSurface: 0, 0, 0;
+  --light-onError: 0, 0, 0;
+  --dark-primary: 188, 204, 0;
+  --dark-secondary: 0, 0, 202;
+  --dark-background: 31, 31, 31;
+  --dark-surface: 18, 18, 18;
+  --dark-error: 194, 8, 15;
+  --dark-onPrimary: 0, 0, 0;
+  --dark-onSecondary: 255, 255, 255;
+  --dark-onBackground: 255, 255, 255;
+  --dark-onSurface: 255, 255, 255;
+  --dark-onError: 255, 255, 255;
+}
