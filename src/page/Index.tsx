@@ -1,13 +1,16 @@
+import { useEffect, useRef, useState } from "react";
+import truffleContract from "@truffle/contract";
+
 import InfoCard from "../components/InfoCard/InfoCard";
 import TaskCard from "../components/TaskCard/TaskCard";
 import Navbar from "../components/navbar/navbar";
 
 import { MainSectionStyles } from "./Index.styles";
-import { useEffect, useState } from "react";
 
 export default function Index() {
   const [provider, setProvider] = useState();
   const [account, setAccount] = useState("");
+  const [taskRef, setTaskRef] = useState();
 
   async function loadEthereum() {
     if (window["ethereum"]) {
@@ -18,7 +21,17 @@ export default function Index() {
         method: "eth_requestAccounts",
       });
       setAccount(account[0]);
+      loadContracts();
     }
+  }
+
+  async function loadContracts() {
+    const response = await fetch("TaskContract.json");
+    const data = await response.json();
+
+    const contract = truffleContract(data);
+    contract.setProvider(provider);
+    setTaskRef(contract.taskContract.deployed());
   }
 
   useEffect(() => {
