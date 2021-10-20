@@ -1,6 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+
 import truffleContract from "@truffle/contract";
 
+import migratedContract from "../../build/contracts/TaskContract.json";
 import InfoCard from "../components/InfoCard/InfoCard";
 import TaskCard from "../components/TaskCard/TaskCard";
 import Navbar from "../components/navbar/navbar";
@@ -26,12 +28,10 @@ export default function Index() {
   }
 
   async function loadContracts() {
-    const response = await fetch("TaskContract.json");
-    const data = await response.json();
-
-    const contract = truffleContract(data);
-    contract.setProvider(provider);
-    setTaskRef(contract.taskContract.deployed());
+    const contract = truffleContract(migratedContract);
+    console.log({ contract });
+    // contract.setProvider(provider);
+    // setTaskRef(contract.taskContract.deployed());
   }
 
   useEffect(() => {
