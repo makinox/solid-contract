@@ -37,4 +37,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   const submitButton = document.querySelector("#taskForm button");
   submitButton.className = `${window.ButtonContained()}`;
+
+  const contracts = document.querySelectorAll("#list article");
+  contracts.forEach((el) => {
+    el.className = `${window.Card_styles()}`;
+  });
+
+  const contractsButton = document.querySelectorAll("#list article button");
+  contractsButton.forEach((el) => {
+    el.className = `${window.ButtonContained()}`;
+  });
 });

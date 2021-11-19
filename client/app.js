@@ -35,10 +35,11 @@ App = {
   renderTask: async () => {
     const taskRef = await App.taskc;
     if (taskRef) {
-      const counter = await taskRef.taskCounter();
+      console.log({ task: await taskRef });
+      const counter = 1;
       let finalHtml = "";
 
-      for (let i = 0; i <= counter.toNumber(); i++) {
+      for (let i = 0; i <= counter; i++) {
         const taskResponse = await taskRef.task(i);
         const taskObject = {
           id: taskResponse[0],
@@ -49,17 +50,19 @@ App = {
         };
         let taskElement = `
           <article>
-            <span>${taskObject.id}</span>
+          <div class="card-header">
             <span>${taskObject.title}</span>
+            <span>${taskObject.id}</span>
+          </div>
+          <div class="card-body flex flex-col">
             <span>${taskObject.description}</span>
-            <span>created at:  ${new Date(
-              taskObject.createdAt * 1000
-            ).toLocaleString()}</span>
-            <span>${taskObject.done}</span>
+            <span>created at: ${2020202}</span>
+            <span>done: ${taskObject.done}</span>
             <button onclick="App.toogleDone(${
               taskObject.id
             })">toggleDone</button>
-          </article>
+          </div>
+        </article>
         `;
         finalHtml += taskElement;
       }
