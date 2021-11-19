@@ -1,0 +1,33 @@
+<svg
+  width="210.40625px"
+  height="336.7999633789062px"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="144.796875 -93.39998168945311 210.40625 336.7999633789062"
+  style="background: rgba(0, 0, 0, 0);"
+  preserveAspectRatio="xMidYMid"
+><defs><filter
+      id="editing-jagged"
+      x="-100%"
+      y="-100%"
+      width="300%"
+      height="300%"
+    ><feTurbulence
+        result="turb"
+        baseFrequency="0.06"
+        numOctaves="1"
+        seed="1"
+      /><feDisplacementMap
+        in="SourceGraphic"
+        in2="turb"
+        scale="10"
+      /></filter></defs><g filter="url(#editing-jagged)"><g
+      transform="translate(182.6000121831894, 143.29999542236328)"
+    ><path
+        d="M133.20-83L133.20-83L133.20-83Q133.20 2.20 40.80 2.20L40.80 2.20L40.80 2.20Q26 2.20 1.60-1.40L1.60-1.40L24-119.60L24-119.60Q25.60-127.60 26.60-132.20L26.60-132.20L26.60-132.20Q57-134.40 70.50-134.40L70.50-134.40L70.50-134.40Q84-134.40 96.40-131.60L96.40-131.60L96.40-131.60Q108.80-128.80 117-122.60L117-122.60L117-122.60Q133.20-110.40 133.20-83ZM92-90.40L92-90.40L92-90.40Q92-120.20 70.60-120.20L70.60-120.20L68.60-120.20L68.60-120.20Q67.60-120.20 66.60-120L66.60-120L46-12.60L46-12.60Q46.80-12.20 47.60-12.20L47.60-12.20L49.20-12.20L49.20-12.20Q56.60-12.20 64.30-16.80L64.30-16.80L64.30-16.80Q72-21.40 78-30.80L78-30.80L78-30.80Q92-52.60 92-90.40Z"
+        fill="#ffbd16"
+      /></g></g><style>text {
+  font-size: 64px;
+  font-family: Arial Black;
+  dominant-baseline: central;
+  text-anchor: middle;
+}</style></svg>
