@@ -16,4 +16,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
   const section = document.querySelector("nav section");
   section.className = `flex items-center justify-between ${window.FluidContainer_styles()}`;
+
+  const infoSection = document.querySelector("#info");
+  infoSection.className = `flex justify-evenly ${window.FluidContainer_styles()}`;
+
+  const wallet = document.querySelector("#info article");
+  wallet.className = `items-center justify-center ${window.Card_styles({
+    css: {
+      maxWidth: "600px",
+    },
+  })}`;
+
+  const form = document.querySelector("#taskForm");
+  form.className = `${window.Card_styles({
+    css: {
+      width: "600px",
+      padding: "0 20px",
+    },
+  })}`;
+
+  const submitButton = document.querySelector("#taskForm button");
+  submitButton.className = `${window.ButtonContained()}`;
 });

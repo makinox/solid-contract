@@ -35,18 +35,22 @@
       </section>
     </nav>
 
-    <section class="info">
-      <div class="card">
-        <h5>Wallet</h5>
-        <span id="address">12345666</span>
-      </div>
-      <form class="card" id="taskForm">
-        <h5>Save a task</h5>
-        <input type="text" name="taskForm-title" placeholder="title" />
+    <section id="info">
+      <article>
+        <div className="card-header">
+          <h2>Wallet</h2>
+        </div>
+        <div className="card-body">
+          <p id="address">12345666</p>
+        </div>
+      </article>
+      <form id="taskForm">
+        <h2>Save a task</h2>
+        <input type="text" name="taskForm-title" placeholder="Title" />
         <input
           type="text"
           name="taskForm-description"
-          placeholder="description"
+          placeholder="Description"
         />
         <button>Save</button>
       </form>
